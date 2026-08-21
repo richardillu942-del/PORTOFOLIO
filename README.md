@@ -3,7 +3,7 @@
 </div>
 
 <h3 align="center">
-  <a href="https://github.com/richardillu942-del">🌐 Kunjungi Portofolio ku di Sini</a>
+  <a href="https://rchporto.vercel.app/">🌐 Kunjungi Portofolio ku di Sini</a>
 </h3>
 
 ---
