@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard W. Illu | Creative Developer</title>
+    
+    <!-- Modern Fonts: Syne untuk Heading, Space Grotesk untuk Text UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- GSAP for Insanely Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Custom Blend Cursor -->
+    <div class="cursor"></div>
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar reveal-on-load">
+        <a href="#" class="logo">RICHARD.</a>
+        <div class="nav-status">
+            <span class="status-dot"></span> Available for Web Projects
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-wrapper">
+            
+            <!-- Tempat Foto Profil Interaktif -->
+            <div class="profile-container reveal-on-load" data-speed="0.05">
+                <div class="profile-glow"></div>
+                <!-- GANTI LINK GAMBAR DI BAWAH INI DENGAN FOTO ASLIMU -->
+                <img src="icatz.jpg" alt="Richard W. Illu" class="profile-img">
+            </div>
+
+            <h1 class="hero-title">
+                <div class="line-wrap"><div class="line">LOGIC MEETS</div></div>
+                <div class="line-wrap"><div class="line text-outline">IMAGINATION.</div></div>
+            </h1>
+            
+            <div class="hero-bottom reveal-on-load">
+                <div class="bio-text">
+                    <p>Hai perkenalkan nama saya Richard Wicliv Illu.</p>
+                    <p>Saya adalah siswa dari SMK PGRI 03 MALANG kelas 11 RPA.<br>Saya <i>adalah </i> seorang<i> pemula</i> yang ingin terus belajar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Skills -->
+    <div class="marquee-section reveal-up">
+        <div class="marquee">
+            <div class="marquee-inner">
+                <span>HTML5</span><span class="dot">•</span>
+                <span>CSS3</span><span class="dot">•</span>
+                <span>JAVASCRIPT</span><span class="dot">•</span>
+                <span>JAVA</span><span class="dot">•</span>
+                <span>PHP</span><span class="dot">•</span>
+                <span>LARAVEL</span><span class="dot">•</span>
+                <span>MYSQL</span><span class="dot">•</span>
+                <span>NODE.JS</span><span class="dot">•</span>
+                
+                <!-- Duplikasi Teks -->
+                <span>HTML5</span><span class="dot">•</span>
+                <span>CSS3</span><span class="dot">•</span>
+                <span>JAVASCRIPT</span><span class="dot">•</span>
+                <span>JAVA</span><span class="dot">•</span>
+                <span>PHP</span><span class="dot">•</span>
+                <span>LARAVEL</span><span class="dot">•</span>
+                <span>MYSQL</span><span class="dot">•</span>
+                <span>NODE.JS</span><span class="dot">•</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giant Interactive GitHub CTA -->
+    <section id="projects" class="github-cta-section reveal-up">
+        <p class="cta-subtitle">Penasaran dengan apa yang saya bangun di balik layar?</p>
+        
+        <!-- Hover pada elemen ini akan memicu kursor besar dan gambar melayang -->
+        <a href="https://github.com/richardillu942-del" target="_blank" class="giant-cta hover-reveal-trigger" data-img="https://placehold.co/800x500/111827/00f3ff?text=GitHub+Repository">
+            <div class="cta-text-wrap">
+                <span class="cta-text main-text">EKSPLORASI PROYEK</span>
+                <span class="cta-text hover-text">BUKA GITHUB SAYA</span>
+            </div>
+            <i class="ph ph-arrow-up-right cta-icon"></i>
+        </a>
+    </section>
+
+    <!-- Floating Image Element -->
+    <div class="hover-image-reveal">
+        <img src="" alt="Project Preview">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Richard W. Illu. Crafted with logic & caffeine.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
