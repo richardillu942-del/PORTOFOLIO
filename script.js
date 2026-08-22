@@ -1,5 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
     gsap.registerPlugin(ScrollTrigger);
+    
+    let progress = 0;
+    const loaderPercentage = document.querySelector('.loader-percentage');
+    
+    let interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 15) + 5;
+        if(progress > 100) progress = 100;
+        loaderPercentage.innerText = progress + '%';
+        
+        if(progress === 100) {
+            clearInterval(interval);
+            startWebsite();
+        }
+    }, 100);
+
+    function startWebsite() {
+        gsap.to('.preloader', {
+            y: "-100%", duration: 1, ease: "power4.inOut", delay: 0.2,
+            onComplete: () => { document.querySelector('.preloader').style.display = 'none'; }
+        });
+
+        const tl = gsap.timeline({ delay: 0.8 });
+        tl.from('.profile-container', { scale: 0, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)" })
+          .from('.hero-title .line', { y: 150, opacity: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.8")
+          .from('.bio-text p', { y: 20, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.6")
+          .from('.nav-status, .logo', { opacity: 0, y: -20, duration: 0.8, stagger: 0.1 }, "-=0.5")
+          .from('.scroll-indicator', { opacity: 0, duration: 1 }, "-=0.5");
+    }
+
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+    });
+
+    gsap.utils.toArray('.parallax-container').forEach(container => {
+        const img = container.querySelector('.parallax-img');
+        gsap.to(img, {
+            y: "15%", // Bergerak ke bawah saat di-scroll
+            ease: "none",
+            scrollTrigger: {
+                trigger: container,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
+
     const cursor = document.querySelector('.cursor');
     const hoverImageReveal = document.querySelector('.hover-image-reveal');
     const hoverImage = hoverImageReveal.querySelector('img');
@@ -29,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Magnetic Effect Logic
         magnets.forEach((magnet) => {
             magnet.addEventListener('mousemove', function(e) {
                 const position = magnet.getBoundingClientRect();
@@ -50,9 +113,21 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         requestAnimationFrame(updateCursor);
 
-        document.querySelectorAll('a, button, .profile-container, .magnetic').forEach(el => {
+        document.querySelectorAll('a:not(.project-image-container), button, .profile-container, .magnetic, .skill-item').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover-active'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover-active'));
+        });
+
+        document.querySelectorAll('[data-cursor-text]').forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                const text = this.getAttribute('data-cursor-text');
+                cursor.classList.add('view-active');
+                cursor.querySelector('.cursor-text').textContent = text;
+            });
+            el.addEventListener('mouseleave', function() {
+                cursor.classList.remove('view-active');
+                cursor.querySelector('.cursor-text').textContent = '';
+            });
         });
 
         if(ctaTrigger) {
@@ -61,22 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 hoverImage.src = imgSrc;
                 gsap.to(hoverImageReveal, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(1.5)" });
             });
-
             ctaTrigger.addEventListener('mouseleave', () => {
                 gsap.to(hoverImageReveal, { opacity: 0, scale: 0.5, rotation: 10, duration: 0.3, ease: "power2.out" });
             });
         }
     }
 
-    // Smoother Entry Animations
-    const tl = gsap.timeline({ delay: 0.2 });
-    tl.from('.profile-container', { scale: 0, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)" })
-      .from('.hero-title .line', { y: 150, opacity: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.8")
-      .from('.bio-text p', { y: 20, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.6")
-      .from('.nav-status, .logo', { opacity: 0, y: -20, duration: 0.8, stagger: 0.1 }, "-=0.5");
-
     const revealElements = document.querySelectorAll('.reveal-up');
-    revealElements.forEach(el => {
+    revealElements.forEach((el) => {
         gsap.from(el, {
             scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
             y: 50, opacity: 0, duration: 1, ease: "power3.out"

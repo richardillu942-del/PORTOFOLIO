@@ -12,12 +12,25 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <div class="cursor"></div>
+    <div class="preloader">
+        <div class="loader-content">
+            <span class="loader-text">RICHARD.</span>
+            <span class="loader-percentage">0%</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Custom Cursor with Text Capability -->
+    <div class="cursor"><span class="cursor-text"></span></div>
+    
     <div class="noise-overlay"></div>
 
     <nav class="navbar reveal-on-load">
@@ -27,9 +40,9 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-wrapper">
-            
             <div class="profile-container reveal-on-load" data-speed="0.05">
                 <div class="profile-glow"></div>
                 <img src="icatz.jpg" alt="Richard W. Illu" class="profile-img">
@@ -46,34 +59,72 @@
                     <p>Siswa Rekayasa Perangkat Lunak (XI-RPA) di SMK PGRI 3 Malang.<br>Berfokus pada arsitektur <i>frontend</i> dan penciptaan pengalaman web interaktif yang modern.</p>
                 </div>
             </div>
+            
+            <div class="scroll-indicator reveal-on-load">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
         </div>
     </section>
 
     <div class="marquee-section reveal-up">
         <div class="marquee">
             <div class="marquee-inner">
-                <span>HTML5</span><span class="dot">•</span>
-                <span>CSS3</span><span class="dot">•</span>
-                <span>JAVASCRIPT</span><span class="dot">•</span>
-                <span>JAVA</span><span class="dot">•</span>
-                <span>PHP</span><span class="dot">•</span>
-                <span>LARAVEL</span><span class="dot">•</span>
-                <span>GSAP</span><span class="dot">•</span>
-                
-                <span>HTML5</span><span class="dot">•</span>
-                <span>CSS3</span><span class="dot">•</span>
-                <span>JAVASCRIPT</span><span class="dot">•</span>
-                <span>JAVA</span><span class="dot">•</span>
-                <span>PHP</span><span class="dot">•</span>
-                <span>LARAVEL</span><span class="dot">•</span>
-                <span>GSAP</span><span class="dot">•</span>
+                <span>FRONTEND</span><span class="dot">•</span>
+                <span>BACKEND</span><span class="dot">•</span>
+                <span>UI/UX</span><span class="dot">•</span>
+                <span>ANIMATION</span><span class="dot">•</span>
+                <span>FRONTEND</span><span class="dot">•</span>
+                <span>BACKEND</span><span class="dot">•</span>
+                <span>UI/UX</span><span class="dot">•</span>
+                <span>ANIMATION</span><span class="dot">•</span>
             </div>
         </div>
     </div>
 
-    <section id="projects" class="github-cta-section reveal-up">
-        <p class="cta-subtitle">Lihat bagaimana saya menulis kode</p>
+    <section class="skills-section reveal-up">
+        <h2 class="section-label">KEAHLIAN & TEKNOLOGI</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <span class="skill-number">01</span>
+                <h3 class="skill-name">Frontend Architecture</h3>
+                <span class="skill-tech">HTML5, CSS3, JS, GSAP</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-number">02</span>
+                <h3 class="skill-name">Backend Logic</h3>
+                <span class="skill-tech">PHP, Laravel, Java, MySQL</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-number">03</span>
+                <h3 class="skill-name">Design & Prototyping</h3>
+                <span class="skill-tech">Figma, UI/UX Principles</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-section reveal-up">
+        <h2 class="section-label">KARYA TERPILIH</h2>
         
+        <div class="project-card">
+            <a href="#" target="_blank" class="project-image-container" data-cursor-text="VIEW">
+                <img src="Screenshot 2026-08-22 090315.png" alt="RichStore" class="project-img parallax-img">
+            </a>
+            
+            <div class="project-info">
+                <h3 class="project-title">RichStore</h3>
+                <p class="project-desc">Ini adalah website jual beli yang saya buat saat saya masih kelas 1 dan ini adalah tugas yang diberikan oleh pengajar untuk membuat website dan saya membuat web ini.</p>
+                <div class="project-tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="github-cta-section reveal-up">
+        <p class="cta-subtitle">Lihat kode di balik layar</p>
         <a href="https://github.com/richardillu942-del" target="_blank" class="giant-cta hover-reveal-trigger" data-img="https://placehold.co/800x500/111827/00f3ff?text=GitHub+Repository">
             <div class="cta-text-wrap">
                 <span class="cta-text main-text">EKSPLORASI PROYEK</span>
@@ -83,13 +134,29 @@
         </a>
     </section>
 
+    <!-- Contact & Social Media Section -->
+    <section class="contact-section reveal-up">
+        <h2 class="contact-title">MARI BERKOLABORASI.</h2>
+        <div class="social-links">
+            <a href="https://instagram.com/richardd_cz" target="_blank" class="social-btn magnetic">
+                <i class="ph ph-instagram-logo"></i> Instagram
+            </a>
+            <a href="https://wa.me/6281317977951" target="_blank" class="social-btn magnetic">
+                <i class="ph ph-whatsapp-logo"></i> WhatsApp
+            </a>
+            <a href="https://github.com/richardillu942-del" target="_blank" class="social-btn magnetic">
+                <i class="ph ph-github-logo"></i> GitHub
+            </a>
+        </div>
+    </section>
+
     <div class="hover-image-reveal">
         <img src="" alt="Project Preview">
     </div>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Richard W. Illu. Crafted with precision & code.</p>
+            <p>&copy; 2026 Richard W. Illu. Crafted with logic & precision.</p>
         </div>
     </footer>
 
