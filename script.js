@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hoverImage = hoverImageReveal.querySelector('img');
     const ctaTrigger = document.querySelector('.hover-reveal-trigger');
     const profilePic = document.querySelector('.profile-container');
+    const magnets = document.querySelectorAll('.magnetic');
 
     let xTo = gsap.quickTo(hoverImageReveal, "left", {duration: 0.4, ease: "power3"}),
         yTo = gsap.quickTo(hoverImageReveal, "top", {duration: 0.4, ease: "power3"});
@@ -13,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let mouseX = 0, mouseY = 0;
 
     if (window.matchMedia("(pointer: fine)").matches) {
-        
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
@@ -29,6 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        // Magnetic Effect Logic
+        magnets.forEach((magnet) => {
+            magnet.addEventListener('mousemove', function(e) {
+                const position = magnet.getBoundingClientRect();
+                const x = e.pageX - position.left - position.width / 2;
+                const y = e.pageY - position.top - position.height / 2;
+                gsap.to(magnet, { x: x * 0.3, y: y * 0.3, duration: 1, ease: "power4.out" });
+            });
+            magnet.addEventListener('mouseleave', function() {
+                gsap.to(magnet, { x: 0, y: 0, duration: 1, ease: "elastic.out(1, 0.3)" });
+            });
+        });
+
         const updateCursor = () => {
             cursorX += (mouseX - cursorX) * 0.2;
             cursorY += (mouseY - cursorY) * 0.2;
@@ -37,10 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         requestAnimationFrame(updateCursor);
 
-        document.querySelectorAll('a, button, .profile-container').forEach(el => {
+        document.querySelectorAll('a, button, .profile-container, .magnetic').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover-active'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover-active'));
         });
+
         if(ctaTrigger) {
             ctaTrigger.addEventListener('mouseenter', () => {
                 const imgSrc = ctaTrigger.getAttribute('data-img');
@@ -54,26 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Smoother Entry Animations
     const tl = gsap.timeline({ delay: 0.2 });
-
-    tl.from('.profile-container', { scale: 0, opacity: 0, duration: 1, ease: "back.out(1.5)" })
-      .from('.hero-title .line', { y: 150, opacity: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.5")
+    tl.from('.profile-container', { scale: 0, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)" })
+      .from('.hero-title .line', { y: 150, opacity: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.8")
       .from('.bio-text p', { y: 20, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.6")
-      .from('.nav-status', { opacity: 0, x: -20, duration: 0.8 }, "-=0.5");
+      .from('.nav-status, .logo', { opacity: 0, y: -20, duration: 0.8, stagger: 0.1 }, "-=0.5");
 
     const revealElements = document.querySelectorAll('.reveal-up');
-    
     revealElements.forEach(el => {
         gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 85%", 
-                toggleActions: "play none none reverse"
-            },
-            y: 80,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out"
+            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
+            y: 50, opacity: 0, duration: 1, ease: "power3.out"
         });
     });
 });
