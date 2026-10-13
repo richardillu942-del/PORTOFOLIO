@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------- Preloader ---------- */
     const preloader = document.querySelector(".preloader");
     const loaderPercentage = document.querySelector(".loader-percentage");
+    const loaderProgress = document.querySelector(".loader-progress");
+    const loaderProgressFill = document.querySelector(".loader-progress-fill");
     let progress = 0, started = false;
 
     const heroTargets = [".hero-photo", ".hero-title .line", ".hero-copy", ".hero-cta", ".nav-status", ".logo", ".nav-links", ".scroll-indicator"];
@@ -99,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const interval = setInterval(() => {
         progress = Math.min(100, progress + Math.floor(Math.random() * 15) + 5);
         loaderPercentage.textContent = progress + "%";
+        loaderProgress.setAttribute("aria-valuenow", progress);
+        loaderProgressFill.style.width = progress + "%";
         if (progress === 100) { clearInterval(interval); startWebsite(); }
     }, 100);
     setTimeout(startWebsite, 3000); // jaga-jaga supaya preloader tidak pernah menggantung
