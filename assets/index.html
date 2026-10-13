@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard W. Illu | Creative Frontend Developer</title>
+    <meta name="description" content="Portofolio Richard Wicliv Illu, siswa RPL SMK PGRI 3 Malang. Frontend developer yang fokus pada web interaktif, animasi, dan UI modern.">
+    <meta name="theme-color" content="#030303">
+    <meta property="og:title" content="Richard W. Illu | Creative Frontend Developer">
+    <meta property="og:description" content="Siswa RPL SMK PGRI 3 Malang. Frontend developer yang fokus pada web interaktif, animasi, dan UI modern.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/icatz.jpg">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27></text></svg>">
+    <noscript><style>.preloader{display:none}.reveal-up,.line{opacity:1!important;transform:none!important}</style></noscript>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Lewati ke konten</a>
+    
+    <div class="preloader">
+        <div class="loader-content">
+            <span class="loader-text">RICHARD.</span>
+            <span class="loader-percentage">0%</span>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Custom Cursor with Text Capability -->
+    <div class="cursor"><span class="cursor-text"></span></div>
+    
+    <div class="noise-overlay"></div>
+    <div class="orbs" aria-hidden="true"><i></i><i></i></div>
+
+    <nav class="navbar reveal-on-load">
+        <a href="#top" class="logo magnetic">RICHARD.</a>
+        <div class="nav-links">
+            <a href="#skills">Keahlian</a>
+            <a href="#journey">Perjalanan</a>
+            <a href="#karya">Karya</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+        <div class="nav-status magnetic">
+            <span class="status-dot"></span> Available for Web Projects
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="main"><section class="hero" id="top">
+        <div class="hero-wrapper">
+            <h1 class="hero-title" aria-label="Halo, saya Richard Wicliv Illu">
+                <div class="line-wrap"><div class="line">Halo, saya</div></div>
+                <div class="line-wrap"><div class="line hero-name"><span class="typing-text">Richard</span></div></div>
+                <div class="line-wrap"><div class="line"><span class="typing-text">Wicliv Illu.</span><span class="typing-caret" aria-hidden="true"></span></div></div>
+            </h1>
+
+            <figure class="hero-photo reveal-on-load">
+                <img src="img/icatz.jpg" alt="Foto Richard Wicliv Illu">
+                <figcaption>RICHARD WICLIV ILLU <span>XI / RPL</span></figcaption>
+            </figure>
+            
+            <div class="hero-bottom reveal-on-load">
+                <p class="hero-copy">Siswa kelas XI SMK PGRI 3 Malang, jurusan Rekayasa Perangkat Lunak (RPL). Saya senang membangun website yang modern, responsif, dan nyaman digunakan.</p>
+                <div class="hero-cta">
+                    <a href="#karya" class="btn btn-primary">Lihat Projek</a>
+                    <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu." target="_blank" rel="noopener" class="btn btn-ghost">Hubungi saya</a>
+                    <a href="cv-richard-wicliv-illu.pdf" class="btn btn-ghost cv-download" download><i class="ph ph-download-simple" aria-hidden="true"></i> Unduh CV</a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator reveal-on-load">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-section reveal-up">
+        <div class="marquee">
+            <div class="marquee-inner">
+                <span>FRONTEND</span><span class="dot">•</span>
+                <span>BACKEND</span><span class="dot">•</span>
+                <span>UI/UX</span><span class="dot">•</span>
+                <span>ANIMATION</span><span class="dot">•</span>
+                <span>FRONTEND</span><span class="dot">•</span>
+                <span>BACKEND</span><span class="dot">•</span>
+                <span>UI/UX</span><span class="dot">•</span>
+                <span>ANIMATION</span><span class="dot">•</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-section reveal-up" id="about">
+        <div class="about-heading">
+            <p class="about-kicker">01 / PROFIL</p>
+            <h2 class="about-title">Tentang <span>saya.</span></h2>
+        </div>
+        <div class="about-layout">
+            <figure class="about-portrait">
+                <img src="img/icatz.jpg" alt="Richard Wicliv Illu">
+                <figcaption><span>RICHARD WICLIV ILLU</span><span>SMK PGRI 3 MALANG</span></figcaption>
+            </figure>
+            <div class="about-content">
+                <p class="about-eyebrow">PELAJAR RPL · WEB DEVELOPER</p>
+                <h3>Halo, saya Richard.</h3>
+                <p class="about-copy">Saya siswa kelas XI Rekayasa Perangkat Lunak di SMK PGRI 3 Malang. Saya senang mengubah ide menjadi website yang rapi, responsif, dan nyaman digunakan.</p>
+                <p class="about-copy">Fokus saya ada pada pengembangan frontend dan interaksi UI. Saya menggunakan HTML, CSS, dan JavaScript, sambil terus memperdalam Laravel, MySQL, dan Java.</p>
+                <div class="about-focus" aria-label="Fokus bidang">
+                    <span>Frontend</span>
+                    <span>UI Interaction</span>
+                    <span>Web Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section reveal-up" id="skills">
+        <h2 class="section-label">KEAHLIAN & TEKNOLOGI</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/html5/E34F26" alt=""><h3 class="skill-name">HTML</h3></span><span class="skill-percent">85%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="HTML" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><span style="--skill-level: 85%"></span></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/css/1572B6" alt=""><h3 class="skill-name">CSS</h3></span><span class="skill-percent">50%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="CSS" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span style="--skill-level: 50%"></span></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt=""><h3 class="skill-name">JavaScript</h3></span><span class="skill-percent">48%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="JavaScript" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><span style="--skill-level: 48%"></span></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/laravel/FF2D20" alt=""><h3 class="skill-name">Laravel</h3></span><span class="skill-percent">30%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="Laravel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><span style="--skill-level: 30%"></span></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/mysql/4479A1" alt=""><h3 class="skill-name">MySQL</h3></span><span class="skill-percent">40%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="MySQL" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65"><span style="--skill-level: 40%"></span></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-meta"><span class="skill-identity"><img class="skill-logo" src="https://cdn.simpleicons.org/openjdk/ED8B00" alt=""><h3 class="skill-name">Java</h3></span><span class="skill-percent">55%</span></div>
+                <div class="skill-meter" role="progressbar" aria-label="Java" aria-valuemin="0" aria-valuemax="100" aria-valuenow="55"><span style="--skill-level: 55%"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey-section reveal-up" id="journey">
+        <div class="journey-heading">
+            <h2 class="section-label">PERJALANAN</h2>
+            <p class="journey-intro">Berawal dari tugas sekolah, lalu tumbuh jadi hal yang ingin terus saya tekuni.</p>
+        </div>
+        <ol class="timeline">
+            <li>
+                <div class="journey-meta"><span class="t-year">KELAS X</span><span class="journey-index">01</span></div>
+                <h3>Proyek pertama: RichStore</h3>
+                <p>Saya mulai belajar HTML, CSS, dan JavaScript di sekolah. Dari tugas itu, saya membuat RichStore, toko online sederhana yang jadi awal ketertarikan saya pada web.</p>
+                <div class="journey-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            </li>
+            <li>
+                <div class="journey-meta"><span class="t-year">KELAS XI</span><span class="journey-index">02</span></div>
+                <h3>Mulai bermain dengan interaksi</h3>
+                <p>Saya tertarik membuat website terasa lebih hidup. Sekarang saya sedang mendalami GSAP dan scroll animation, sambil belajar PHP, Laravel, dan MySQL.</p>
+                <div class="journey-tags"><span>GSAP</span><span>Laravel</span><span>MySQL</span></div>
+            </li>
+            <li>
+                <div class="journey-meta"><span class="t-year">SELANJUTNYA</span><span class="journey-index">03</span></div>
+                <h3>Belajar lewat pengalaman nyata</h3>
+                <p>Saya ingin mencoba kemampuan ini di proyek yang benar-benar digunakan. Saat ini saya terbuka untuk kesempatan magang dan kolaborasi.</p>
+                <div class="journey-tags"><span>Magang</span><span>Kolaborasi</span></div>
+            </li>
+        </ol>
+    </section>
+
+    <section class="project-section reveal-up" id="karya">
+        <h2 class="section-label project-heading">Proyek Pilihan</h2>
+
+        <div class="project-grid">
+            <article class="project-card">
+                <a href="https://orbii.web.id/" target="_blank" rel="noopener" class="project-media project-image-container" data-cursor-text="DETAIL" aria-label="Lihat website Klub Hobi di Orbii">
+                    <img src="https://orbii.web.id/images/cover/hero-img.png" alt="Tampilan website Orbii untuk menemukan komunitas hobi" class="project-img">
+                </a>
+                <div class="project-info">
+                    <p class="project-eyebrow">01 / HOBBY COMMUNITY</p>
+                    <h3 class="project-title">Website Klub Hobi</h3>
+                    <p class="project-desc">Website komunitas Klub Hobi yang menampilkan informasi kegiatan dan event komunitas.</p>
+                    <div class="project-tags"><span>Laravel</span><span>Tailwind CSS</span><span>PHP</span><span>MySQL</span></div>
+                    <a class="project-link" href="https://orbii.web.id/" target="_blank" rel="noopener">Lihat Projek <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-media portfolio-preview" aria-hidden="true">
+                    <div class="portfolio-browser">
+                        <div class="portfolio-browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span>richard-illu / portfolio</span></div>
+                        <div class="portfolio-browser-body">
+                            <img src="img/icatz.jpg" alt="">
+                            <div class="portfolio-browser-copy"><span>HALO, SAYA</span><strong>RICHARD<br>W.I</strong><em>Frontend Developer</em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <p class="project-eyebrow">02 / PERSONAL WEBSITE</p>
+                    <h3 class="project-title">Portofolio Ini</h3>
+                    <p class="project-desc">Portofolio personal untuk memperkenalkan profil, keahlian, dan karya dengan animasi web interaktif.</p>
+                    <div class="project-tags"><span>GSAP</span><span>ScrollTrigger</span><span>Lenis</span></div>
+                    <a class="project-link" href="https://github.com/richardillu942-del" target="_blank" rel="noopener">Lihat kode <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-media motion-preview" aria-hidden="true">
+                    <div class="motion-preview-top"><span>UI / MOTION</span><span>STUDY 03</span></div>
+                    <div class="motion-preview-title">MOVE<br>WITH <span>INTENT.</span></div>
+                    <div class="motion-preview-bars"><i></i><i></i><i></i></div>
+                    <div class="motion-preview-bottom"><span>INTERACTION DESIGN</span><span>CSS + GSAP</span></div>
+                </div>
+                <div class="project-info">
+                    <p class="project-eyebrow">03 / UI EXPERIMENT</p>
+                    <h3 class="project-title">Eksperimen UI &amp; Animasi</h3>
+                    <p class="project-desc">Eksplorasi layout responsif, tipografi, dan micro-interaction menggunakan CSS serta GSAP.</p>
+                    <div class="project-tags"><span>CSS3</span><span>GSAP</span><span>UI/UX</span></div>
+                    <a class="project-link" href="#kontak">Tanya tentang eksperimen <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="projects" class="github-cta-section reveal-up">
+        <p class="cta-subtitle">Lihat kode di balik layar</p>
+        <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener" class="giant-cta">
+            <div class="cta-text-wrap">
+                <span class="cta-text main-text">EKSPLORASI PROYEK</span>
+                <span class="cta-text hover-text">BUKA GITHUB SAYA</span>
+            </div>
+            <i class="ph ph-arrow-up-right cta-icon"></i>
+        </a>
+    </section>
+
+    <!-- Contact & Social Media Section -->
+    <section class="contact-section reveal-up" id="kontak">
+        <h2 class="contact-title">MARI BERKOLABORASI.</h2>
+        <div class="social-links">
+            <a href="https://instagram.com/richardd_cz" target="_blank" rel="noopener" class="social-btn magnetic">
+                <i class="ph ph-instagram-logo"></i> Instagram
+            </a>
+            <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu." target="_blank" rel="noopener" class="social-btn magnetic">
+                <i class="ph ph-whatsapp-logo"></i> WhatsApp
+            </a>
+            <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener" class="social-btn magnetic">
+                <i class="ph ph-github-logo"></i> GitHub
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Richard W. Illu. Crafted with logic & precision.</p>
+            <a href="#top" class="to-top">Kembali ke atas</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
