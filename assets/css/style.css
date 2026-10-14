@@ -445,6 +445,8 @@ body {
     width: 100%;
 }
 
+.action-icon-btn.mobile-menu-toggle { display: none; }
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -1665,17 +1667,19 @@ body {
     gap: 60px;
     align-items: flex-start;
 }
+.contact-layout > * { min-width: 0; }
 
 .contact-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    max-width: 100%;
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     line-height: 1.05;
     margin-bottom: 20px;
 }
 
-.contact-title span { color: var(--accent); }
+.contact-title span { display: block; max-width: 100%; color: var(--accent); }
 
 .contact-lead {
     color: var(--text-secondary);
@@ -2229,6 +2233,61 @@ footer {
     font-weight: 600;
 }
 
+.workflow-toolkit {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
+    align-items: center;
+    gap: 28px;
+    margin-top: 28px;
+    padding: 28px 32px;
+    border-radius: var(--radius-lg);
+    background: #171b1a;
+    color: #f6f7f3;
+}
+
+.workflow-toolkit-heading { max-width: 260px; }
+.workflow-toolkit-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: #f08068;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.workflow-toolkit-heading h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.workflow-toolkit-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+.workflow-tool {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+    color: rgba(246, 247, 243, 0.82);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.workflow-tool img {
+    display: block;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    object-fit: contain;
+}
+.workflow-tool > i {
+    flex: 0 0 22px;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
@@ -2277,11 +2336,52 @@ footer {
     .contact-layout {
         grid-template-columns: 1fr;
     }
+    .workflow-toolkit { grid-template-columns: minmax(0, 1fr); }
+    .workflow-toolkit-heading { max-width: 36ch; }
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .navbar { gap: 10px; }
+    .nav-actions { margin-left: auto; gap: 8px; }
+    .action-icon-btn.mobile-menu-toggle { display: inline-flex; flex: 0 0 40px; }
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 5%;
+        left: 5%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        background: var(--glass-bg);
+        box-shadow: var(--card-shadow);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    .navbar.menu-open .nav-links { display: flex; }
+    .nav-links a { padding: 12px 14px; }
+    .nav-links a + a { border-top: 1px solid var(--border-subtle); }
     .status-badge { display: none; }
+    .workflow-toolkit { padding: 24px; }
+    .workflow-toolkit-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-title {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 3.3rem);
+        overflow-wrap: anywhere;
+    }
+    .giant-cta {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: clamp(1.6rem, 7vw, 2.6rem);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
     .hero {
         padding-top: 110px;
     }
@@ -2297,6 +2397,7 @@ footer {
     .contact-cards-grid {
         grid-template-columns: 1fr;
     }
+    .project-grid { grid-template-columns: minmax(0, 1fr); }
     .terminal-floating-btn {
         bottom: 16px;
         right: 68px;
@@ -2306,6 +2407,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .navbar { gap: 6px; padding-right: 5%; padding-left: 5%; }
+    .logo { margin-right: 0; font-size: 1.15rem; }
+    #soundToggleBtn { display: none; }
+    .nav-actions { gap: 0; }
     .hero-cta {
         flex-direction: column;
         align-items: stretch;

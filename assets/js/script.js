@@ -618,6 +618,40 @@ Halo dari Matrix! Salam kenal :)`,
         });
     });
 
+    const navElement = document.getElementById("navbar");
+    const navLinks = document.getElementById("navLinks");
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mobileMenuIcon = document.getElementById("mobileMenuIcon");
+
+    function setMobileMenuOpen(isOpen) {
+        if (!navElement || !mobileMenuToggle || !mobileMenuIcon) return;
+        navElement.classList.toggle("menu-open", isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileMenuToggle.setAttribute("aria-label", isOpen ? "Tutup menu navigasi" : "Buka menu navigasi");
+        mobileMenuToggle.title = isOpen ? "Tutup menu" : "Buka menu";
+        mobileMenuIcon.className = isOpen ? "ph ph-x" : "ph ph-list";
+    }
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener("click", () => {
+            const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+            setMobileMenuOpen(!isOpen);
+        });
+    }
+
+    if (navLinks) {
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => setMobileMenuOpen(false));
+        });
+    }
+
+    document.addEventListener("click", (event) => {
+        if (navElement && !navElement.contains(event.target)) setMobileMenuOpen(false);
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMobileMenuOpen(false);
+    });
+
     // Scroll progress bar and back to top
     const scrollProgress = document.getElementById("scrollProgress");
     const backToTopBtn = document.getElementById("backToTopBtn");

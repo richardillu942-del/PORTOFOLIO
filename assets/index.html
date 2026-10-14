@@ -97,7 +97,7 @@
             RICHARD<span>.</span>
         </a>
 
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#about">Tentang</a>
             <a href="#skills">Keahlian</a>
             <a href="#karya">Karya</a>
@@ -123,6 +123,11 @@
                 <i class="ph ph-moon" id="themeIcon"></i>
             </button>
         </div>
+
+        <button type="button" class="action-icon-btn mobile-menu-toggle" id="mobileMenuToggle"
+            aria-label="Buka menu navigasi" aria-controls="navLinks" aria-expanded="false" title="Buka menu">
+            <i class="ph ph-list" id="mobileMenuIcon" aria-hidden="true"></i>
+        </button>
     </nav>
 
     <!-- Main Content -->
@@ -259,7 +264,7 @@
             <div class="about-layout">
                 <div class="about-portrait-card">
                     <div class="about-portrait-inner">
-                        <img src="img/icatz3.jpg" alt="Richard bermain gitar di panggung">
+                        <img src="img/icatz3.jpeg" alt="Richard bermain gitar di panggung" loading="lazy">
                     </div>
                     <div class="about-portrait-meta">
                         <span>RICHARD WICLIV ILLU</span>
@@ -788,6 +793,21 @@
                         <span class="workflow-tool-badge">GitHub</span>
                         <span class="workflow-tool-badge">Vercel</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="workflow-toolkit" aria-labelledby="workflowToolkitTitle">
+                <div class="workflow-toolkit-heading">
+                    <span class="workflow-toolkit-kicker">AI-ASSISTED TOOLKIT</span>
+                    <h3 id="workflowToolkitTitle">Tools yang menemani proses kreatif saya.</h3>
+                </div>
+                <div class="workflow-toolkit-list" aria-label="Tools yang digunakan">
+                    <div class="workflow-tool"><img src="https://cdn.simpleicons.org/cursor/FFFFFF" alt="" loading="lazy"><span>Cursor</span></div>
+                    <div class="workflow-tool"><img src="https://cdn.simpleicons.org/githubcopilot/FFFFFF" alt="" loading="lazy"><span>GitHub Copilot</span></div>
+                    <div class="workflow-tool"><i class="ph ph-robot" aria-hidden="true"></i><span>ChatGPT</span></div>
+                    <div class="workflow-tool"><img src="https://cdn.simpleicons.org/claude/FFFFFF" alt="" loading="lazy"><span>Claude</span></div>
+                    <div class="workflow-tool"><img src="https://cdn.simpleicons.org/v0/FFFFFF" alt="" loading="lazy"><span>v0.dev</span></div>
+                    <div class="workflow-tool"><img src="https://cdn.simpleicons.org/googlegemini/FFFFFF" alt="" loading="lazy"><span>Gemini API</span></div>
                 </div>
             </div>
         </section>
