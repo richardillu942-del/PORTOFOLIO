@@ -1,6 +1,96 @@
 document.addEventListener("DOMContentLoaded", () => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const projectToolbar = document.querySelector(".project-toolbar");
+    const projectFilters = document.querySelector(".project-filters");
+    const copyEmailButton = document.querySelector("[data-copy-email]");
+    const saveContactButton = document.querySelector("[data-save-contact]");
+    const contactFeedback = document.querySelector(".contact-feedback");
+
+    async function copyText(text) {
+        if (navigator.clipboard?.writeText) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch {}
+        }
+
+        const field = document.createElement("textarea");
+        field.value = text;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand("copy");
+        field.remove();
+        return copied;
+    }
+
+    if (copyEmailButton && contactFeedback) {
+        copyEmailButton.addEventListener("click", async () => {
+            const copied = await copyText(copyEmailButton.dataset.copyEmail);
+            contactFeedback.textContent = copied
+                ? "Email berhasil disalin."
+                : `Salin alamat ini: ${copyEmailButton.dataset.copyEmail}`;
+        });
+    }
+
+    if (saveContactButton && contactFeedback) {
+        saveContactButton.addEventListener("click", () => {
+            const vCard = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "FN:Richard Wicliv Illu",
+                "TEL;TYPE=CELL:+6281317977951",
+                "EMAIL;TYPE=INTERNET:richardillu942@gmail.com",
+                "ADR;TYPE=HOME:;;;;Malang;Jawa Timur;Indonesia",
+                "END:VCARD"
+            ].join("\r\n");
+            const file = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(file);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "Richard-Wicliv-Illu.vcf";
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            contactFeedback.textContent = "Kartu kontak siap diunduh.";
+        });
+    }
+
+    if (projectToolbar && projectFilters) {
+        const filterButtons = Array.from(projectFilters.querySelectorAll("[data-project-filter]"));
+        const projectCards = Array.from(document.querySelectorAll(".project-card[data-project-category]"));
+        const projectCount = document.querySelector(".project-count");
+        projectToolbar.hidden = false;
+
+        projectFilters.addEventListener("click", (event) => {
+            const button = event.target.closest("[data-project-filter]");
+            if (!button) return;
+
+            const activeFilter = button.dataset.projectFilter;
+            let visibleCount = 0;
+            projectCards.forEach((card) => {
+                const visible = activeFilter === "all" || card.dataset.projectCategory === activeFilter;
+                card.hidden = !visible;
+                if (visible) {
+                    visibleCount += 1;
+                    card.querySelectorAll(".scroll-reveal").forEach((element) => {
+                        element.style.opacity = "";
+                        element.style.visibility = "";
+                        element.style.transform = "";
+                    });
+                }
+            });
+
+            filterButtons.forEach((filterButton) => {
+                filterButton.setAttribute("aria-pressed", String(filterButton === button));
+            });
+            projectCount.textContent = `${visibleCount} proyek`;
+            if (window.ScrollTrigger) ScrollTrigger.refresh();
+        });
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     /* ---------- Smooth scroll (Lenis) tersinkron dengan ScrollTrigger ---------- */
@@ -25,9 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ---------- Progress bar scroll ---------- */
     const bar = document.querySelector(".scroll-progress");
+    const backToTop = document.querySelector(".back-to-top");
     ScrollTrigger.create({
         start: 0, end: "max",
-        onUpdate: (self) => { bar.style.width = self.progress * 100 + "%"; }
+        onUpdate: (self) => {
+            bar.style.width = self.progress * 100 + "%";
+            if (backToTop) {
+                const visible = self.progress > 0.04;
+                backToTop.style.setProperty("--scroll-progress", `${self.progress * 100}%`);
+                backToTop.classList.toggle("is-visible", visible);
+                backToTop.setAttribute("aria-hidden", String(!visible));
+            }
+        }
     });
 
     /* ---------- Preloader ---------- */
