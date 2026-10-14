@@ -204,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(typeRoles, typingSpeed);
     }
-    typeRoles();
 
     /* ==========================================================================
        4. HERO DUAL AVATAR SWITCHER (SISWA RPL VS SISI KREATIF)
@@ -680,48 +679,228 @@ Halo dari Matrix! Salam kenal :)`,
     }
 
     /* ==========================================================================
-       12. PRELOADER & INITIAL ANIMATION
+       12. PRELOADER & INITIAL ANIMATION (CINEMATIC OPENING ENGINE)
        ========================================================================== */
     const preloader = document.getElementById("preloader");
+    const loaderContent = document.querySelector(".loader-content");
     const loaderPercentage = document.getElementById("loaderPercentage");
     const loaderFill = document.getElementById("loaderFill");
-    let loadProgress = 0;
+    const loaderFlare = document.getElementById("loaderFlare");
+    const loaderStepText = document.getElementById("loaderStepText");
+    const loaderStatus = document.getElementById("loaderStatus");
 
-    function finishPreloader() {
-        if (!preloader) return;
-        if (window.gsap) {
-            gsap.to(preloader, {
-                yPercent: -100,
-                duration: 0.8,
-                ease: "power4.inOut",
-                onComplete: () => {
-                    preloader.style.display = "none";
-                }
-            });
-        } else {
+    let isSiteRevealed = false;
+
+    function revealSite() {
+        if (isSiteRevealed) return;
+        isSiteRevealed = true;
+
+        if (!preloader) {
+            typeRoles();
+            return;
+        }
+
+        if (prefersReducedMotion || !window.gsap) {
             preloader.style.display = "none";
+            typeRoles();
+            return;
+        }
+
+        const masterTL = gsap.timeline();
+
+        // 1. Fade out the loader content gently with upward float
+        if (loaderContent) {
+            masterTL.to(loaderContent, {
+                y: -30,
+                opacity: 0,
+                scale: 0.98,
+                duration: 0.45,
+                ease: "power3.in"
+            });
+        }
+
+        // 2. Preloader curtain sweeps upward with laser scanner border
+        masterTL.to(preloader, {
+            yPercent: -100,
+            duration: 0.95,
+            ease: "power4.inOut",
+            onComplete: () => {
+                preloader.style.display = "none";
+            }
+        }, "-=0.15");
+
+        // 3. Staggered, cinematic Hero entrance beneath the sweeping curtain
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+            masterTL.fromTo(navbar,
+                { y: -35, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
+                "-=0.65"
+            );
+        }
+
+        const badgeWrap = document.querySelector(".hero-badge-wrap");
+        if (badgeWrap) {
+            masterTL.fromTo(badgeWrap,
+                { y: 22, opacity: 0, scale: 0.94 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.4)" },
+                "-=0.55"
+            );
+        }
+
+        const greeting = document.querySelector(".greeting");
+        if (greeting) {
+            masterTL.fromTo(greeting,
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" },
+                "-=0.5"
+            );
+        }
+
+        const heroTitle = document.querySelector(".hero-title");
+        if (heroTitle) {
+            masterTL.fromTo(heroTitle,
+                { y: 35, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
+                "-=0.45"
+            );
+        }
+
+        const roleRotator = document.querySelector(".hero-role-rotator");
+        if (roleRotator) {
+            masterTL.fromTo(roleRotator,
+                { y: 20, opacity: 0 },
+                { 
+                    y: 0, 
+                    opacity: 1, 
+                    duration: 0.5, 
+                    ease: "power3.out",
+                    onComplete: () => {
+                        typeRoles();
+                    }
+                },
+                "-=0.4"
+            );
+        } else {
+            typeRoles();
+        }
+
+        const cardContainer = document.querySelector(".hero-card-container");
+        if (cardContainer) {
+            masterTL.fromTo(cardContainer,
+                { y: 45, opacity: 0, scale: 0.93, rotateX: 6 },
+                { y: 0, opacity: 1, scale: 1, rotateX: 0, duration: 0.85, ease: "power3.out" },
+                "-=0.55"
+            );
+        }
+
+        const heroTerminal = document.getElementById("heroTerminalTrigger");
+        if (heroTerminal) {
+            masterTL.fromTo(heroTerminal,
+                { scale: 0, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.55, ease: "back.out(1.8)" },
+                "-=0.35"
+            );
+        }
+
+        const heroCopy = document.querySelector(".hero-copy");
+        if (heroCopy) {
+            masterTL.fromTo(heroCopy,
+                { y: 25, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" },
+                "-=0.4"
+            );
+        }
+
+        const heroBtns = document.querySelectorAll(".hero-cta .btn");
+        if (heroBtns.length) {
+            masterTL.fromTo(heroBtns,
+                { y: 22, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.45, stagger: 0.08, ease: "back.out(1.3)" },
+                "-=0.35"
+            );
+        }
+
+        const statsRow = document.querySelector(".hero-stats-row");
+        if (statsRow) {
+            masterTL.fromTo(statsRow,
+                { y: 20, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    onStart: () => {
+                        const statNumEl = document.querySelector(".hero-stat-item strong");
+                        if (statNumEl && !isNaN(parseInt(statNumEl.textContent))) {
+                            const target = parseInt(statNumEl.textContent);
+                            const counter = { val: 0 };
+                            gsap.to(counter, {
+                                val: target,
+                                duration: 1.1,
+                                ease: "power2.out",
+                                onUpdate: () => {
+                                    statNumEl.textContent = Math.round(counter.val);
+                                }
+                            });
+                        }
+                    }
+                },
+                "-=0.3"
+            );
         }
     }
 
-    const loaderInterval = setInterval(() => {
-        loadProgress += Math.floor(Math.random() * 20) + 12;
-        if (loadProgress >= 100) {
-            loadProgress = 100;
-            clearInterval(loaderInterval);
-            if (loaderPercentage) loaderPercentage.textContent = "100%";
-            if (loaderFill) loaderFill.style.width = "100%";
-            setTimeout(finishPreloader, 350);
-        } else {
-            if (loaderPercentage) loaderPercentage.textContent = `${loadProgress}%`;
-            if (loaderFill) loaderFill.style.width = `${loadProgress}%`;
-        }
-    }, 60);
+    // Run Preloader Sequence
+    if (preloader && !prefersReducedMotion && window.gsap) {
+        const loaderProgressObj = { val: 0 };
 
-    // Safety fallback
+        gsap.to(loaderProgressObj, {
+            val: 100,
+            duration: 1.35,
+            ease: "power2.inOut",
+            onUpdate: () => {
+                const current = Math.round(loaderProgressObj.val);
+                if (loaderPercentage) loaderPercentage.textContent = `${current}%`;
+                if (loaderFill) loaderFill.style.width = `${current}%`;
+                if (loaderFlare) {
+                    loaderFlare.style.left = `${current}%`;
+                    if (current >= 100) loaderFlare.style.opacity = "0";
+                }
+
+                if (loaderStepText) {
+                    if (current < 25) {
+                        loaderStepText.textContent = "Menghubungkan ke portofolio...";
+                    } else if (current < 55) {
+                        loaderStepText.textContent = "Menata tata letak & tema visual...";
+                    } else if (current < 85) {
+                        loaderStepText.textContent = "Memuat proyek & interaksi...";
+                    } else if (current < 100) {
+                        loaderStepText.textContent = "Finishing touch...";
+                    } else {
+                        loaderStepText.textContent = "Selamat datang!";
+                    }
+                }
+            },
+            onComplete: () => {
+                if (loaderStatus) {
+                    loaderStatus.classList.add("is-ready");
+                    loaderStatus.innerHTML = "<i></i> SIAP";
+                }
+                playSuccessSound();
+                setTimeout(revealSite, 240);
+            }
+        });
+    } else {
+        revealSite();
+    }
+
+    // Safety fallback timeout to prevent ever getting stuck
     setTimeout(() => {
-        clearInterval(loaderInterval);
-        finishPreloader();
-    }, 2500);
+        if (!isSiteRevealed) {
+            revealSite();
+        }
+    }, 2800);
 
     /* ==========================================================================
        13. GSAP SCROLL REVEALS
@@ -730,12 +909,11 @@ Halo dari Matrix! Salam kenal :)`,
         gsap.registerPlugin(ScrollTrigger);
 
         const revealSections = [
-            ".hero-wrapper",
-            ".pkl-card",
             ".about-layout",
             ".skills-grid",
             ".project-grid",
             ".timeline",
+            ".workflow-grid",
             ".contact-layout"
         ];
 

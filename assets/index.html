@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard Wicliv Illu | Siswa RPL SMK PGRI 3 Malang</title>
-    <meta name="description" content="Portofolio Richard Wicliv Illu, siswa kelas XI RPL di SMK PGRI 3 Malang. Kumpulan proyek web sederhana, keahlian dasar, dan proses belajar.">
+    <meta name="description"
+        content="Portofolio Richard Wicliv Illu, siswa kelas XI RPL di SMK PGRI 3 Malang. Kumpulan proyek web sederhana, keahlian dasar, dan proses belajar.">
     <meta name="theme-color" content="#f6f7f3">
     <meta property="og:title" content="Richard Wicliv Illu | Siswa RPL SMK PGRI 3 Malang">
-    <meta property="og:description" content="Portofolio Richard Wicliv Illu, siswa kelas XI RPL di SMK PGRI 3 Malang. Kumpulan proyek web sederhana dan proses belajar.">
+    <meta property="og:description"
+        content="Portofolio Richard Wicliv Illu, siswa kelas XI RPL di SMK PGRI 3 Malang. Kumpulan proyek web sederhana dan proses belajar.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="img/icatz.jpg">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
 
     <noscript>
         <style>
@@ -24,7 +27,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -43,21 +48,31 @@
 
     <!-- Preloader -->
     <div class="preloader" id="preloader" aria-label="Memuat portofolio">
+        <div class="loader-backdrop-glow"></div>
         <div class="loader-content">
             <div class="loader-topline">
-                <span>RICHARD WICLIV ILLU</span>
-                <span>PORTOFOLIO / 2026</span>
+                <span class="loader-school">SMK PGRI 3 MALANG · XI RPL</span>
+                <span class="loader-year">PORTOFOLIO / 2026</span>
             </div>
             <div class="loader-main">
-                <span class="loader-text">Richard<span>.</span></span>
-                <span class="loader-percentage" id="loaderPercentage" aria-live="polite">0%</span>
+                <div class="loader-greeting-group">
+                    <span class="loader-kicker">HALO, SAYA</span>
+                    <h2 class="loader-text">Richard<span>.</span></h2>
+                </div>
+                <div class="loader-number-wrap">
+                    <span class="loader-percentage" id="loaderPercentage" aria-live="polite">0%</span>
+                </div>
             </div>
-            <div class="loader-progress" role="progressbar" aria-label="Memuat portofolio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                <span class="loader-progress-fill" id="loaderFill"></span>
+            <div class="loader-progress" role="progressbar" aria-label="Memuat portofolio" aria-valuemin="0"
+                aria-valuemax="100" aria-valuenow="0">
+                <div class="loader-progress-track">
+                    <span class="loader-progress-fill" id="loaderFill"></span>
+                </div>
+                <span class="loader-progress-flare" id="loaderFlare"></span>
             </div>
             <div class="loader-bottomline">
-                <span>MEMUAT HALAMAN</span>
-                <span class="loader-status"><i></i> MOHON TUNGGU</span>
+                <span class="loader-step-text" id="loaderStepText">Menghubungkan ke portofolio...</span>
+                <span class="loader-status" id="loaderStatus"><i></i> MOHON TUNGGU</span>
             </div>
         </div>
     </div>
@@ -87,6 +102,7 @@
             <a href="#skills">Keahlian</a>
             <a href="#karya">Karya</a>
             <a href="#journey">Perjalanan</a>
+            <a href="#workflow">Workflow</a>
             <a href="#kontak">Kontak</a>
         </div>
 
@@ -96,12 +112,14 @@
             </span>
 
             <!-- Sound Effects Toggle Button -->
-            <button type="button" class="action-icon-btn" id="soundToggleBtn" aria-label="Toggle Sound Effects" title="Aktifkan/Matikan Efek Suara">
+            <button type="button" class="action-icon-btn" id="soundToggleBtn" aria-label="Toggle Sound Effects"
+                title="Aktifkan/Matikan Efek Suara">
                 <i class="ph ph-speaker-high" id="soundIcon"></i>
             </button>
 
             <!-- Theme Toggle Button -->
-            <button type="button" class="action-icon-btn" id="themeToggleBtn" aria-label="Ganti Tema (Gelap/Terang)" title="Ganti Tema">
+            <button type="button" class="action-icon-btn" id="themeToggleBtn" aria-label="Ganti Tema (Gelap/Terang)"
+                title="Ganti Tema">
                 <i class="ph ph-moon" id="themeIcon"></i>
             </button>
         </div>
@@ -135,14 +153,16 @@
                     </div>
 
                     <p class="hero-copy">
-                        Saya siswa kelas XI RPL di <strong>SMK PGRI 3 Malang</strong>. Di sini saya menampilkan beberapa proyek sederhana yang pernah saya buat sambil belajar membuat website.
+                        Saya siswa kelas XI RPL di <strong>SMK PGRI 3 Malang</strong>. Di sini saya menampilkan beberapa
+                        proyek sederhana yang pernah saya buat sambil belajar membuat website.
                     </p>
 
                     <div class="hero-cta">
                         <a href="#karya" class="btn btn-primary">
                             <i class="ph ph-cards"></i> Lihat Proyek
                         </a>
-                        <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu." target="_blank" rel="noopener" class="btn btn-secondary">
+                        <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu."
+                            target="_blank" rel="noopener" class="btn btn-secondary">
                             <i class="ph ph-whatsapp-logo"></i> Hubungi Saya
                         </a>
                         <a href="cv-richard-wicliv-illu.pdf" class="btn btn-ghost" download>
@@ -152,7 +172,7 @@
 
                     <div class="hero-stats-row">
                         <div class="hero-stat-item">
-                            <strong>3</strong>
+                            <strong>16</strong>
                             <span>Proyek Pilihan</span>
                         </div>
                         <div class="hero-stat-item">
@@ -170,17 +190,21 @@
                 <div class="hero-visual">
                     <div class="hero-card-container">
                         <div class="hero-photo-tabs" role="tablist" aria-label="Pilih foto">
-                            <button type="button" class="photo-tab-btn active" id="tabStudentPhoto" role="tab" aria-selected="true">
+                            <button type="button" class="photo-tab-btn active" id="tabStudentPhoto" role="tab"
+                                aria-selected="true">
                                 <i class="ph ph-student"></i> Profil Sekolah
                             </button>
-                            <button type="button" class="photo-tab-btn" id="tabGuitarPhoto" role="tab" aria-selected="false">
+                            <button type="button" class="photo-tab-btn" id="tabGuitarPhoto" role="tab"
+                                aria-selected="false">
                                 <i class="ph ph-guitar"></i> Hobi Musik
                             </button>
                         </div>
 
                         <div class="hero-photo-viewport">
-                            <img src="img/icatz.jpg" alt="Foto Richard Wicliv Illu" class="hero-avatar-img student-photo" id="avatarStudent">
-                            <img src="img/icatz3-removebg-preview.png" alt="Richard bermain gitar di panggung" class="hero-avatar-img guitar-photo hidden-photo" id="avatarGuitar">
+                            <img src="img/icatz.jpg" alt="Foto Richard Wicliv Illu"
+                                class="hero-avatar-img student-photo" id="avatarStudent">
+                            <img src="img/icatz3.jpeg" alt="Richard bermain gitar di panggung"
+                                class="hero-avatar-img guitar-photo hidden-photo" id="avatarGuitar">
                         </div>
 
                         <div class="hero-card-footer">
@@ -235,7 +259,7 @@
             <div class="about-layout">
                 <div class="about-portrait-card">
                     <div class="about-portrait-inner">
-                        <img src="img/icatz3-removebg-preview.png" alt="Richard bermain gitar di panggung">
+                        <img src="img/icatz3.jpg" alt="Richard bermain gitar di panggung">
                     </div>
                     <div class="about-portrait-meta">
                         <span>RICHARD WICLIV ILLU</span>
@@ -246,10 +270,14 @@
                 <div class="about-content">
                     <h3>Belajar dari Tugas Sekolah Sampai Suka Ngulik Web</h3>
                     <p class="about-copy">
-                        Awalnya saya belajar membuat website dari tugas sekolah waktu kelas X. Sejak mencoba membuat toko online sederhana (RichStore), saya jadi suka mencoba hal-hal baru di dunia web.
+                        Awalnya saya belajar membuat website dari tugas sekolah waktu kelas X. Sejak mencoba membuat
+                        toko online sederhana (RichStore), saya jadi suka mencoba hal-hal baru di dunia web.
                     </p>
                     <p class="about-copy">
-                        Di sekolah, saya belajar dasar-dasar Rekayasa Perangkat Lunak. Yang paling sering saya gunakan adalah HTML, CSS, dan JavaScript. Saya juga sedang belajar dasar Laravel, MySQL, dan Java. Masih banyak hal yang belum saya pahami, jadi saya terus mencoba membuat proyek kecil untuk melatih logika dan pemahaman saya.
+                        Di sekolah, saya belajar dasar-dasar Rekayasa Perangkat Lunak. Yang paling sering saya gunakan
+                        adalah HTML, CSS, dan JavaScript. Saya juga sedang belajar dasar Laravel, MySQL, dan Java. Masih
+                        banyak hal yang belum saya pahami, jadi saya terus mencoba membuat proyek kecil untuk melatih
+                        logika dan pemahaman saya.
                     </p>
 
                     <div class="about-highlights">
@@ -287,7 +315,8 @@
                         <a href="cv-richard-wicliv-illu.pdf" class="btn btn-secondary btn-sm" download>
                             <i class="ph ph-download-simple"></i> Unduh CV (PDF)
                         </a>
-                        <a href="cv-richard-wicliv-illu.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                        <a href="cv-richard-wicliv-illu.pdf" target="_blank" rel="noopener"
+                            class="btn btn-ghost btn-sm">
                             <i class="ph ph-file-text"></i> Lihat CV Lengkap
                         </a>
                     </div>
@@ -300,15 +329,20 @@
             <div class="section-header">
                 <span class="section-kicker"><i></i> 02 / KEAHLIAN &amp; TEKNOLOGI</span>
                 <h2 class="section-title">Teknologi yang <span>Sedang Dipelajari.</span></h2>
-                <p class="section-desc">Tingkat kemampuan saya masih di tahap dasar sampai menengah. Berikut beberapa hal yang pernah saya coba dan pelajari di sekolah maupun belajar mandiri.</p>
+                <p class="section-desc">Tingkat kemampuan saya masih di tahap dasar sampai menengah. Berikut beberapa
+                    hal yang pernah saya coba dan pelajari di sekolah maupun belajar mandiri.</p>
             </div>
 
             <div class="skills-toolbar">
                 <div class="skills-category-tabs" role="tablist" aria-label="Filter kategori keahlian">
-                    <button type="button" class="skills-tab-btn active" data-skill-filter="all" role="tab" aria-selected="true">Semua</button>
-                    <button type="button" class="skills-tab-btn" data-skill-filter="frontend" role="tab" aria-selected="false">Frontend</button>
-                    <button type="button" class="skills-tab-btn" data-skill-filter="backend" role="tab" aria-selected="false">Backend &amp; Database</button>
-                    <button type="button" class="skills-tab-btn" data-skill-filter="tools" role="tab" aria-selected="false">Tools</button>
+                    <button type="button" class="skills-tab-btn active" data-skill-filter="all" role="tab"
+                        aria-selected="true">Semua</button>
+                    <button type="button" class="skills-tab-btn" data-skill-filter="frontend" role="tab"
+                        aria-selected="false">Frontend</button>
+                    <button type="button" class="skills-tab-btn" data-skill-filter="backend" role="tab"
+                        aria-selected="false">Backend &amp; Database</button>
+                    <button type="button" class="skills-tab-btn" data-skill-filter="tools" role="tab"
+                        aria-selected="false">Tools</button>
                 </div>
                 <span class="hero-location" id="skillsCountLabel">8 Teknologi</span>
             </div>
@@ -320,11 +354,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5">
                         </div>
-                        <span class="skill-badge" style="background: rgba(14, 165, 233, 0.1); color: #0284c7;">Dasar - Menengah</span>
+                        <span class="skill-badge" style="background: rgba(14, 165, 233, 0.1); color: #0284c7;">Dasar -
+                            Menengah</span>
                     </div>
                     <div>
                         <h3 class="skill-name">HTML</h3>
-                        <p class="skill-desc">Biasa saya pakai untuk menyusun struktur halaman website dan tugas-tugas sekolah.</p>
+                        <p class="skill-desc">Biasa saya pakai untuk menyusun struktur halaman website dan tugas-tugas
+                            sekolah.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -338,11 +374,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/openjdk/ED8B00" alt="Java">
                         </div>
-                        <span class="skill-badge" style="background: rgba(234, 179, 8, 0.1); color: #ca8a04;">Dasar Sekolah</span>
+                        <span class="skill-badge" style="background: rgba(234, 179, 8, 0.1); color: #ca8a04;">Dasar
+                            Sekolah</span>
                     </div>
                     <div>
                         <h3 class="skill-name">Java</h3>
-                        <p class="skill-desc">Mempelajari dasar pemrograman logika dan konsep dasar OOP dari pelajaran di sekolah.</p>
+                        <p class="skill-desc">Mempelajari dasar pemrograman logika dan konsep dasar OOP dari pelajaran
+                            di sekolah.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -356,11 +394,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
+                        <span class="skill-badge"
+                            style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
                     </div>
                     <div>
                         <h3 class="skill-name">CSS</h3>
-                        <p class="skill-desc">Belajar mengatur tata letak dengan Flexbox, Grid, dan pewarnaan sederhana.</p>
+                        <p class="skill-desc">Belajar mengatur tata letak dengan Flexbox, Grid, dan pewarnaan sederhana.
+                        </p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -374,11 +414,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
+                        <span class="skill-badge"
+                            style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
                     </div>
                     <div>
                         <h3 class="skill-name">MySQL</h3>
-                        <p class="skill-desc">Belajar membuat tabel data sederhana dan operasi simpan-ambil data dasar (CRUD).</p>
+                        <p class="skill-desc">Belajar membuat tabel data sederhana dan operasi simpan-ambil data dasar
+                            (CRUD).</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -392,11 +434,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar / Belajar</span>
+                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar /
+                            Belajar</span>
                     </div>
                     <div>
                         <h3 class="skill-name">JavaScript</h3>
-                        <p class="skill-desc">Masih belajar logika dasar, manipulasi elemen sederhana, dan event klik di halaman web.</p>
+                        <p class="skill-desc">Masih belajar logika dasar, manipulasi elemen sederhana, dan event klik di
+                            halaman web.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -410,11 +454,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/laravel/FF2D20" alt="Laravel">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar / Belajar</span>
+                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar /
+                            Belajar</span>
                     </div>
                     <div>
                         <h3 class="skill-name">Laravel</h3>
-                        <p class="skill-desc">Mencoba routing dasar, controller, dan tampilan Blade untuk tugas proyek web.</p>
+                        <p class="skill-desc">Mencoba routing dasar, controller, dan tampilan Blade untuk tugas proyek
+                            web.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Perkiraan Pemahaman</span>
@@ -428,11 +474,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/greensock/88CE02" alt="GSAP">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Eksplorasi</span>
+                        <span class="skill-badge"
+                            style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Eksplorasi</span>
                     </div>
                     <div>
                         <h3 class="skill-name">GSAP</h3>
-                        <p class="skill-desc">Suka coba-coba animasi web sederhana agar halaman tidak terasa terlalu kaku.</p>
+                        <p class="skill-desc">Suka coba-coba animasi web sederhana agar halaman tidak terasa terlalu
+                            kaku.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Status</span>
@@ -446,11 +494,13 @@
                         <div class="skill-icon-wrap">
                             <img src="https://cdn.simpleicons.org/git/F05032" alt="Git">
                         </div>
-                        <span class="skill-badge" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
+                        <span class="skill-badge"
+                            style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Dasar</span>
                     </div>
                     <div>
                         <h3 class="skill-name">Git &amp; GitHub</h3>
-                        <p class="skill-desc">Digunakan untuk menyimpan repository proyek, commit tugas, dan backup kode belajar.</p>
+                        <p class="skill-desc">Digunakan untuk menyimpan repository proyek, commit tugas, dan backup kode
+                            belajar.</p>
                     </div>
                     <div class="skill-card-bottom">
                         <span>Status</span>
@@ -465,7 +515,8 @@
             <div class="section-header">
                 <span class="section-kicker"><i></i> 03 / PROYEK BELAJAR</span>
                 <h2 class="section-title">Beberapa Proyek <span>yang Pernah Dibuat.</span></h2>
-                <p class="section-desc">Kumpulan proyek kecil yang saya kerjakan untuk tugas sekolah dan eksperimen belajar sendiri.</p>
+                <p class="section-desc">Kumpulan proyek kecil yang saya kerjakan untuk tugas sekolah dan eksperimen
+                    belajar sendiri.</p>
             </div>
 
             <div class="project-toolbar">
@@ -482,7 +533,8 @@
                 <article class="project-card" data-category="web">
                     <div class="project-media-wrap">
                         <span class="project-badge-pill">Tugas Web</span>
-                        <img src="https://orbii.web.id/images/cover/hero-img.png" alt="Tampilan website Orbii Klub Hobi" class="project-img" loading="lazy">
+                        <img src="https://orbii.web.id/images/cover/hero-img.png" alt="Tampilan website Orbii Klub Hobi"
+                            class="project-img" loading="lazy">
                     </div>
                     <div class="project-info">
                         <div>
@@ -492,7 +544,8 @@
                             </div>
                             <h3 class="project-title">Website Klub Hobi (Orbii)</h3>
                             <p class="project-desc">
-                                Website komunitas klub hobi yang menampilkan informasi kegiatan dan jadwal acara. Dibuat untuk belajar integrasi Laravel dan database MySQL.
+                                Website komunitas klub hobi yang menampilkan informasi kegiatan dan jadwal acara. Dibuat
+                                untuk belajar integrasi Laravel dan database MySQL.
                             </p>
                             <div class="project-tags">
                                 <span>Laravel</span>
@@ -502,10 +555,12 @@
                             </div>
                         </div>
                         <div class="project-actions">
-                            <a href="https://orbii.web.id/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                            <a href="https://orbii.web.id/" target="_blank" rel="noopener"
+                                class="btn btn-primary btn-sm">
                                 <i class="ph ph-arrow-up-right"></i> Buka Website
                             </a>
-                            <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                            <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener"
+                                class="btn btn-ghost btn-sm">
                                 <i class="ph ph-github-logo"></i> Kode GitHub
                             </a>
                         </div>
@@ -516,10 +571,12 @@
                 <article class="project-card" data-category="game">
                     <div class="project-media-wrap">
                         <span class="project-badge-pill">Game Sederhana</span>
-                        <button type="button" class="project-quick-play-btn" id="openGameModalBtn" title="Mainkan di sini langsung">
+                        <button type="button" class="project-quick-play-btn" id="openGameModalBtn"
+                            title="Mainkan di sini langsung">
                             <i class="ph ph-game-controller"></i> Coba Mainkan
                         </button>
-                        <img src="img/image.png" alt="Tangkapan layar game Flappy Bird buatan Richard" class="project-img" loading="lazy">
+                        <img src="img/image.png" alt="Tangkapan layar game Flappy Bird buatan Richard"
+                            class="project-img" loading="lazy">
                     </div>
                     <div class="project-info">
                         <div>
@@ -529,7 +586,8 @@
                             </div>
                             <h3 class="project-title">Flappy Bird Web Game</h3>
                             <p class="project-desc">
-                                Game Flappy Bird sederhana yang saya coba buat sendiri menggunakan HTML5 Canvas dan JavaScript untuk melatih logika pergerakan dan skor.
+                                Game Flappy Bird sederhana yang saya coba buat sendiri menggunakan HTML5 Canvas dan
+                                JavaScript untuk melatih logika pergerakan dan skor.
                             </p>
                             <div class="project-tags">
                                 <span>HTML5 Canvas</span>
@@ -541,7 +599,8 @@
                             <button type="button" class="btn btn-primary btn-sm" id="btnPlayFlappy">
                                 <i class="ph ph-play"></i> Mainkan di Sini
                             </button>
-                            <a href="https://flappybirdrch.vercel.app/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                            <a href="https://flappybirdrch.vercel.app/" target="_blank" rel="noopener"
+                                class="btn btn-ghost btn-sm">
                                 <i class="ph ph-arrow-up-right"></i> Buka Tab Baru
                             </a>
                         </div>
@@ -550,11 +609,14 @@
 
                 <!-- Project 3: This Portfolio -->
                 <article class="project-card" data-category="web">
-                    <div class="project-media-wrap" style="background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <div class="project-media-wrap"
+                        style="background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; padding: 20px;">
                         <span class="project-badge-pill">Website Pribadi</span>
                         <div style="text-align: center;">
                             <i class="ph ph-browsers" style="font-size: 3.2rem; color: var(--accent);"></i>
-                            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary); margin-top: 8px;">richard-illu / portofolio</p>
+                            <p
+                                style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary); margin-top: 8px;">
+                                richard-illu / portofolio</p>
                         </div>
                     </div>
                     <div class="project-info">
@@ -565,7 +627,8 @@
                             </div>
                             <h3 class="project-title">Portofolio Ini</h3>
                             <p class="project-desc">
-                                Website portofolio sederhana tempat saya menaruh proyek-proyek kecil yang pernah saya buat sambil belajar animasi web dan JavaScript.
+                                Website portofolio sederhana tempat saya menaruh proyek-proyek kecil yang pernah saya
+                                buat sambil belajar animasi web dan JavaScript.
                             </p>
                             <div class="project-tags">
                                 <span>HTML</span>
@@ -575,7 +638,8 @@
                             </div>
                         </div>
                         <div class="project-actions">
-                            <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                            <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener"
+                                class="btn btn-primary btn-sm">
                                 <i class="ph ph-github-logo"></i> Kode di GitHub
                             </a>
                             <button type="button" class="btn btn-ghost btn-sm" id="btnOpenTerminalQuick">
@@ -592,7 +656,8 @@
             <div class="section-header">
                 <span class="section-kicker"><i></i> 04 / PERJALANAN</span>
                 <h2 class="section-title">Proses <span>Belajar Saya.</span></h2>
-                <p class="section-desc">Awalnya saya belajar membuat website dari tugas sekolah. Sejak itu, saya jadi suka mencoba hal-hal baru di dunia web.</p>
+                <p class="section-desc">Awalnya saya belajar membuat website dari tugas sekolah. Sejak itu, saya jadi
+                    suka mencoba hal-hal baru di dunia web.</p>
             </div>
 
             <ol class="timeline">
@@ -601,7 +666,8 @@
                     <div class="timeline-card">
                         <span class="timeline-year">KELAS X</span>
                         <h3>Proyek Pertama: RichStore</h3>
-                        <p>Di kelas X, saya membuat RichStore, toko online sederhana, untuk tugas sekolah. Dari sana saya mulai tertarik membuat website.</p>
+                        <p>Di kelas X, saya membuat RichStore, toko online sederhana, untuk tugas sekolah. Dari sana
+                            saya mulai tertarik membuat website.</p>
                         <div class="timeline-tags">
                             <span>HTML</span>
                             <span>CSS</span>
@@ -615,7 +681,8 @@
                     <div class="timeline-card">
                         <span class="timeline-year">KELAS XI</span>
                         <h3>Mencoba Hal Baru di Kelas XI</h3>
-                        <p>Sekarang saya belajar membuat website yang lebih interaktif, sekaligus mendalami dasar-dasar PHP, Laravel, dan MySQL.</p>
+                        <p>Sekarang saya belajar membuat website yang lebih interaktif, sekaligus mendalami dasar-dasar
+                            PHP, Laravel, dan MySQL.</p>
                         <div class="timeline-tags">
                             <span>PHP</span>
                             <span>Laravel</span>
@@ -629,7 +696,8 @@
                     <div class="timeline-card">
                         <span class="timeline-year">SELANJUTNYA</span>
                         <h3>Masih Ingin Terus Belajar</h3>
-                        <p>Saya ingin terus mencoba ide baru, membuat proyek, dan belajar dari setiap prosesnya untuk mempersiapkan diri ke jenjang berikutnya.</p>
+                        <p>Saya ingin terus mencoba ide baru, membuat proyek, dan belajar dari setiap prosesnya untuk
+                            mempersiapkan diri ke jenjang berikutnya.</p>
                         <div class="timeline-tags">
                             <span>Proyek Baru</span>
                             <span>Terus Belajar</span>
@@ -637,6 +705,91 @@
                     </div>
                 </li>
             </ol>
+        </section>
+
+        <!-- Workflow Section -->
+        <section class="workflow-section" id="workflow">
+            <div class="section-header">
+                <span class="section-kicker"><i></i> 05 / CARA KERJA SAYA</span>
+                <h2 class="section-title">Gimana Saya Biasanya <span>Bikin Sesuatu.</span></h2>
+                <p class="section-desc">Ini alur kerja sederhana yang biasa saya ikuti waktu ngerjain proyek web, dari ngerancang sampai jadi.</p>
+            </div>
+
+            <div class="workflow-grid">
+                <!-- Step 1 -->
+                <div class="workflow-step">
+                    <span class="workflow-step-num">01 ——</span>
+                    <div class="workflow-step-icon">
+                        <i class="ph ph-lightbulb"></i>
+                    </div>
+                    <h3>Ngerancang Ide</h3>
+                    <p>Saya mulai dari nanya ke diri sendiri: ini mau dibuat buat apa? Terus coret-coret dulu di kertas atau Figma buat gambaran kasar tampilannya.</p>
+                    <div class="workflow-tools-row">
+                        <span class="workflow-tool-badge">Kertas + Pulpen</span>
+                        <span class="workflow-tool-badge">Figma</span>
+                    </div>
+                    <div class="workflow-step-arrow"><i class="ph ph-arrow-right"></i></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-step">
+                    <span class="workflow-step-num">02 ——</span>
+                    <div class="workflow-step-icon">
+                        <i class="ph ph-layout"></i>
+                    </div>
+                    <h3>Bangun Struktur HTML</h3>
+                    <p>Setelah ada gambaran, saya mulai tulis kode HTML-nya dulu. Buat kerangka halaman: header, section, footer. Baru pelan-pelan ditambah isinya.</p>
+                    <div class="workflow-tools-row">
+                        <span class="workflow-tool-badge">HTML</span>
+                        <span class="workflow-tool-badge">VS Code</span>
+                    </div>
+                    <div class="workflow-step-arrow"><i class="ph ph-arrow-right"></i></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-step">
+                    <span class="workflow-step-num">03 ——</span>
+                    <div class="workflow-step-icon">
+                        <i class="ph ph-paint-brush"></i>
+                    </div>
+                    <h3>Tata Tampilan & Warna</h3>
+                    <p>Habis strukturnya jadi, baru saya atur tampilannya pakai CSS. Warna, jarak, ukuran huruf — saya coba-coba sampai kelihatan lumayan rapi.</p>
+                    <div class="workflow-tools-row">
+                        <span class="workflow-tool-badge">CSS</span>
+                        <span class="workflow-tool-badge">Tailwind (kadang)</span>
+                    </div>
+                    <div class="workflow-step-arrow"><i class="ph ph-arrow-right"></i></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-step">
+                    <span class="workflow-step-num">04 ——</span>
+                    <div class="workflow-step-icon">
+                        <i class="ph ph-code"></i>
+                    </div>
+                    <h3>Tambah Interaksi JS</h3>
+                    <p>Kalau tampilan sudah oke, saya tambahkan JavaScript buat bikin halaman lebih hidup — klik tombol, animasi kecil, atau logika sederhana.</p>
+                    <div class="workflow-tools-row">
+                        <span class="workflow-tool-badge">JavaScript</span>
+                        <span class="workflow-tool-badge">GSAP (belajar)</span>
+                    </div>
+                    <div class="workflow-step-arrow"><i class="ph ph-arrow-right"></i></div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="workflow-step">
+                    <span class="workflow-step-num">05 ——</span>
+                    <div class="workflow-step-icon">
+                        <i class="ph ph-rocket-launch"></i>
+                    </div>
+                    <h3>Cek & Upload</h3>
+                    <p>Terakhir saya cek di HP dan laptop, beneran bug-nya, terus upload ke GitHub atau hosting gratis. Selesai — walau masih jauh dari sempurna!</p>
+                    <div class="workflow-tools-row">
+                        <span class="workflow-tool-badge">GitHub</span>
+                        <span class="workflow-tool-badge">Vercel</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Giant GitHub Call to Action -->
@@ -656,14 +809,16 @@
         <section class="contact-section" id="kontak">
             <div class="contact-layout">
                 <div>
-                    <span class="section-kicker"><i></i> 05 / KONTAK</span>
+                    <span class="section-kicker"><i></i> 06 / KONTAK</span>
                     <h2 class="contact-title">Mari <span>Berkolaborasi.</span></h2>
                     <p class="contact-lead">
-                        Jika ada pertanyaan, masukan, atau sekadar ingin mengobrol santai seputar web, silakan hubungi saya melalui media di bawah ini.
+                        Jika ada pertanyaan, masukan, atau sekadar ingin mengobrol santai seputar web, silakan hubungi
+                        saya melalui media di bawah ini.
                     </p>
 
                     <div class="contact-cards-grid">
-                        <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu." target="_blank" rel="noopener" class="social-card-btn">
+                        <a href="https://wa.me/6281317977951?text=Halo%20Richard%2C%20saya%20lihat%20portofolio%20kamu."
+                            target="_blank" rel="noopener" class="social-card-btn">
                             <i class="ph ph-whatsapp-logo"></i>
                             <div>
                                 <strong>WhatsApp</strong>
@@ -679,7 +834,8 @@
                             </div>
                         </a>
 
-                        <a href="https://instagram.com/richardd_cz" target="_blank" rel="noopener" class="social-card-btn">
+                        <a href="https://instagram.com/richardd_cz" target="_blank" rel="noopener"
+                            class="social-card-btn">
                             <i class="ph ph-instagram-logo"></i>
                             <div>
                                 <strong>Instagram</strong>
@@ -687,7 +843,8 @@
                             </div>
                         </a>
 
-                        <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener" class="social-card-btn">
+                        <a href="https://github.com/richardillu942-del" target="_blank" rel="noopener"
+                            class="social-card-btn">
                             <i class="ph ph-github-logo"></i>
                             <div>
                                 <strong>GitHub</strong>
@@ -697,7 +854,8 @@
                     </div>
 
                     <div class="contact-quick-tools">
-                        <button type="button" class="btn btn-secondary btn-sm" id="btnCopyEmail" data-email="richardillu942@gmail.com">
+                        <button type="button" class="btn btn-secondary btn-sm" id="btnCopyEmail"
+                            data-email="richardillu942@gmail.com">
                             <i class="ph ph-copy-simple"></i> Salin Email
                         </button>
                         <button type="button" class="btn btn-secondary btn-sm" id="btnSaveVcard">
@@ -731,7 +889,8 @@
 
                         <div class="form-group">
                             <label for="senderMessage">Pesan</label>
-                            <textarea id="senderMessage" class="form-control" placeholder="Tulis pesan di sini..." required></textarea>
+                            <textarea id="senderMessage" class="form-control" placeholder="Tulis pesan di sini..."
+                                required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -744,7 +903,8 @@
     </main>
 
     <!-- Floating Mini Terminal Launcher Button -->
-    <button type="button" class="terminal-floating-btn" id="floatingTerminalBtn" title="Buka Terminal CLI (Tekan ~ atau klik)">
+    <button type="button" class="terminal-floating-btn" id="floatingTerminalBtn"
+        title="Buka Terminal CLI (Tekan ~ atau klik)">
         <span class="terminal-dot"></span>
         <i class="ph ph-terminal"></i>
         <span>Dev Console</span>
@@ -774,7 +934,8 @@
         <div class="terminal-modal-window">
             <div class="terminal-header">
                 <div class="terminal-dots-row">
-                    <button type="button" class="terminal-dot-ctrl close" id="closeTerminalBtn" title="Tutup Terminal"></button>
+                    <button type="button" class="terminal-dot-ctrl close" id="closeTerminalBtn"
+                        title="Tutup Terminal"></button>
                     <button type="button" class="terminal-dot-ctrl min"></button>
                     <button type="button" class="terminal-dot-ctrl max"></button>
                 </div>
@@ -783,13 +944,14 @@
             </div>
             <div class="terminal-body" id="terminalBody">
                 <div class="terminal-output" id="terminalOutput">
-Halo! Ini terminal konsol sederhana Richard.
-Ketik <span class="cmd-highlight">'help'</span> untuk melihat daftar perintah yang bisa dicoba.
-------------------------------------------------------------
+                    Halo! Ini terminal konsol sederhana Richard.
+                    Ketik <span class="cmd-highlight">'help'</span> untuk melihat daftar perintah yang bisa dicoba.
+                    ------------------------------------------------------------
                 </div>
                 <div class="terminal-input-row">
                     <span class="terminal-prompt">richard@dev:~$</span>
-                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="ketik perintah di sini (misal: help)...">
+                    <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false"
+                        placeholder="ketik perintah di sini (misal: help)...">
                 </div>
             </div>
         </div>
@@ -799,8 +961,10 @@ Ketik <span class="cmd-highlight">'help'</span> untuk melihat daftar perintah ya
     <div class="modal-backdrop" id="gameModal" role="dialog" aria-modal="true" aria-label="Game Flappy Bird">
         <div class="game-modal-window">
             <div class="game-modal-header">
-                <h4><i class="ph ph-game-controller" style="color: var(--accent);"></i> Flappy Bird — Game Sederhana</h4>
-                <button type="button" class="action-icon-btn" id="closeGameModalBtn" style="width: 32px; height: 32px; font-size: 1rem;" aria-label="Tutup Game">
+                <h4><i class="ph ph-game-controller" style="color: var(--accent);"></i> Flappy Bird — Game Sederhana
+                </h4>
+                <button type="button" class="action-icon-btn" id="closeGameModalBtn"
+                    style="width: 32px; height: 32px; font-size: 1rem;" aria-label="Tutup Game">
                     <i class="ph ph-x"></i>
                 </button>
             </div>
@@ -809,7 +973,8 @@ Ketik <span class="cmd-highlight">'help'</span> untuk melihat daftar perintah ya
             </div>
             <div class="game-modal-footer">
                 <span>Kontrol: Tekan Spasi / Klik Layar untuk Terbang</span>
-                <a href="https://flappybirdrch.vercel.app/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">
+                <a href="https://flappybirdrch.vercel.app/" target="_blank" rel="noopener"
+                    style="color: var(--accent); text-decoration: none; font-weight: 600;">
                     Buka Tab Baru <i class="ph ph-arrow-up-right"></i>
                 </a>
             </div>
