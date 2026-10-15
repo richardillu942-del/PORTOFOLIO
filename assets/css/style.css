@@ -1672,7 +1672,7 @@ body {
 .contact-title {
     font-family: var(--font-heading);
     max-width: 100%;
-    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-size: clamp(2.25rem, 3.3vw, 3rem);
     font-weight: 800;
     letter-spacing: 0;
     line-height: 1.05;
@@ -1728,8 +1728,8 @@ body {
 }
 
 .social-card-btn span {
-    font-size: 0.78rem;
-    color: var(--text-muted);
+    font-size: 0.82rem;
+    color: var(--text-secondary);
 }
 
 .contact-quick-tools {
@@ -2369,8 +2369,7 @@ footer {
     .workflow-toolkit-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .contact-title {
         max-width: 100%;
-        font-size: clamp(2rem, 9vw, 3.3rem);
-        overflow-wrap: anywhere;
+        font-size: clamp(1.35rem, 7.1vw, 3.1rem);
     }
     .giant-cta {
         display: flex;
