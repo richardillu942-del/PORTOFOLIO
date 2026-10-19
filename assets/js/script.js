@@ -418,7 +418,9 @@ Masih tahap belajar membuat website dan senang mencoba hal-hal baru.`,
 - CSS (~40%): Penataan layout sederhana
 - MySQL (~35%): Tabel dan database dasar
 - JavaScript (~30%): Logika interaksi & DOM dasar
-- Laravel (~30%): Konsep routing & controller dasar`,
+- Laravel (~30%): Konsep routing & controller dasar
+- PHP: Dasar halaman web dinamis & proses server
+- Android Studio: Mengenal IDE untuk pengembangan aplikasi Android`,
 
         projects: () => `Beberapa proyek yang pernah dibuat:
 1. <span class="cmd-highlight">Orbii (Klub Hobi)</span>: Tugas web komunitas (Laravel & Tailwind)
